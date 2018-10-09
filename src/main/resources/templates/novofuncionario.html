@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cadastro de Funcionários</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body>
+        
+        <h2> Cadastro de Funcionários</h2>
+        
+        <form action="#" th:action="@{/salvarfuncionario}" th:object="${funcionarios}" method="post">  
+        <table>
+            <tr>
+                <td> <label>Nome</label> </td>
+                <td> <input type="text" th:field="*{nome}" ></input> </td>
+            </tr>      
+            <tr>
+                <td> <label>Endereço</label> </td>
+                <td> <input type="text" th:field="*{endereco}" ></input> </td>
+            </tr>      
+            <tr>
+                <td> <label>Data de Nascimento</label> </td>
+                <td> <input type="text" th:field="*{dataNascimento}"></input> </td>
+            </tr>       
+            <tr>
+                <td> <label>Telefone</label> </td>
+                <td> <input type="text" th:field="*{telefone}" ></input> </td>
+            </tr>       
+            <tr>
+                <td> <label>CPF</label> </td>
+                <td> <input type="text" th:field="*{cpf}" ></input> </td>
+            </tr>       
+            <tr>
+                <td> <label>RG</label> </td>
+                <td> <input type="text" th:field="*{rg}" ></input> </td>
+            </tr>
+            <tr>
+                <td> <label>Data de Admissão</label> </td>
+                <td> <input type="text" th:field="*{dataAdmissao}"></input> </td>
+            </tr>   
+            <tr>
+                <td> <label>Cargo</label> </td>
+                <td> 
+                    <select th:field="*{cargo}">
+                        <option value=""> Selecione o Cargo</option>
+                        <option th:each="cargo:${cargos}" th:value="${cargo}" th:text="${cargo}"></option>
+                    </select> 
+                </td>
+            </tr>
+            <tr>
+                
+                <td> <input type="submit" ></input> </td>
+            </tr>
+        </table>
+        
+
+    </form>
+    </body>
+</html>
